@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
 import './App.css';
+import Heading from './Heading';
+import Profilex from './Profilex';
+import Images from './Images';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const getCurrentTime = () => new Date().toLocaleTimeString();
+
+    return (
+        <div className="App">
+            <Heading />
+            <div className="profile">
+                <h3>Current Time: {getCurrentTime()}</h3>
+                <Profilex />
+            </div>
+            <Images />
+        </div>
+    );
+};
 
 export default App;
